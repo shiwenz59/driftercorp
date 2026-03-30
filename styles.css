@@ -38,6 +38,12 @@ body {
   cursor: crosshair;
 }
 
+/* ── Remove all selection highlight — touch-first UI ── */
+::selection          { background: transparent; color: inherit; }
+::-moz-selection     { background: transparent; color: inherit; }
+
+* { -webkit-tap-highlight-color: transparent; }
+
 /* Grain overlay */
 body::after {
   content: '';
@@ -63,21 +69,36 @@ body::after {
   border-right: 1px solid var(--border);
 }
 
-/* ── Sticky Nav ── */
+/* ── Sticky Nav ──
+   env(safe-area-inset-top) covers the Dynamic Island / notch on iOS Safari.
+   viewport-fit=cover must be set on the <meta name="viewport"> tag (see index.html).
+   The nav grows to absorb the inset, and the visible 48px content sits below it.
+   ── */
 nav {
   position: sticky;
   top: 0;
   z-index: 100;
-  height: 48px;
+  /* Pad the top by the safe area so content clears the Dynamic Island */
+  padding-top: env(safe-area-inset-top, 0px);
+  height: calc(48px + env(safe-area-inset-top, 0px));
   display: flex;
-  align-items: center;
+  align-items: flex-end;   /* logo + links sit at the bottom of the padded bar */
   justify-content: space-between;
-  padding: 0 20px;
+  padding-bottom: 0;
+  padding-left: 20px;
+  padding-right: 20px;
   gap: 16px;
   background: rgba(12,14,16,0.93);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
   overflow: visible;
+}
+
+/* Give the inner flex children a consistent bottom padding so they don't hug the border */
+.nav-logo,
+.nav-links,
+.nav-hamburger {
+  margin-bottom: 11px;
 }
 
 .nav-logo {
@@ -90,6 +111,8 @@ nav {
   text-decoration: none;
   white-space: nowrap;
   flex-shrink: 0;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 /* Hamburger button — visible only on narrow screens */
@@ -105,6 +128,8 @@ nav {
   cursor: pointer;
   padding: 4px;
   flex-shrink: 0;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .nav-hamburger span {
@@ -139,6 +164,8 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
   text-decoration: none;
   transition: color 0.2s;
   white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .nav-links a:hover,
@@ -151,7 +178,8 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
   .nav-links {
     display: none;
     position: absolute;
-    top: 48px;
+    /* Drop the drawer exactly below the full nav height (safe-area + 48px) */
+    top: calc(48px + env(safe-area-inset-top, 0px));
     left: 0; right: 0;
     flex-direction: column;
     gap: 0;
@@ -213,6 +241,8 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
   position: relative;
   z-index: 2;
   padding: 0 20px;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .hero-eyebrow {
@@ -222,7 +252,6 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
   text-transform: uppercase;
   color: var(--text-mute);
   margin-bottom: 10px;
-
 }
 
 .hero-title {
@@ -234,7 +263,6 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
   text-transform: uppercase;
   color: var(--text);
   margin-bottom: 18px;
-
 }
 
 .hero-badge {
@@ -246,7 +274,6 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
   font-family: var(--f-accent);
   font-size: 15px;
   color: var(--wave);
-
 }
 
 .hero-badge .dot {
@@ -255,7 +282,6 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
   border-radius: 50%;
   background: var(--wave);
   flex-shrink: 0;
-
 }
 
 /* ── Section header ── */
@@ -275,6 +301,8 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
   text-transform: uppercase;
   color: var(--text-mute);
   white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .sec-head::after {
@@ -322,6 +350,8 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
   transform: rotate(-1.5deg);
   transform-origin: left center;
   padding-left: 2px;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 /* Member grid */
@@ -372,6 +402,8 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text);
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .member-role {
@@ -381,6 +413,8 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
   text-transform: uppercase;
   color: var(--text-mute);
   margin-top: 2px;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 /* ── Platform Links ── */
@@ -417,6 +451,8 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
   border-right: 1px solid var(--border);
   flex-shrink: 0;
   transition: color 0.15s;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .link-body     { flex: 1; padding: 18px 20px; }
@@ -430,12 +466,16 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
   text-transform: uppercase;
   color: var(--text);
   margin-bottom: 2px;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .link-handle {
   font-family: var(--f-body);
   font-size: 10px;
   color: var(--text-mute);
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .link-badge {
@@ -445,6 +485,8 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
   padding: 4px 10px;
   border: 1px solid;
   flex-shrink: 0;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .badge-lock { color: var(--wave);  border-color: var(--wave); }
@@ -485,6 +527,8 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--wave);
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .ann-date .day {
@@ -493,6 +537,8 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
   font-weight: 700;
   line-height: 1;
   color: var(--text);
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .ann-body   { padding: 18px 20px; }
@@ -504,6 +550,8 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
   letter-spacing: 0.2em;
   text-transform: uppercase;
   margin-bottom: 4px;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .tag-show { color: var(--wave); }
@@ -518,6 +566,8 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
   color: var(--text);
   margin-bottom: 4px;
   line-height: 1.3;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .ann-desc {
@@ -576,6 +626,8 @@ footer {
   font-size: 9px;
   letter-spacing: 0.1em;
   color: var(--text-mute);
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 /* ════════════════════════════════════════
