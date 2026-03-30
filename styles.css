@@ -255,7 +255,7 @@ nav {
   font-family: var(--f-accent);
   font-size: 17px;
   color: var(--wave);
-  margin: 14px 0 16px;
+  margin: 24px 0 12px;
   display: block;
   transform: rotate(-1.5deg);
   transform-origin: left center;
