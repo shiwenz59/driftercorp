@@ -145,7 +145,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
 .nav-links a.active { color: var(--wave); }
 
 /* Narrow screen: hide links, show hamburger */
-@media (max-width: 420px) {
+@media (max-width: 480px) {
   .nav-hamburger { display: flex; }
 
   .nav-links {
@@ -176,6 +176,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
 /* ── Hero ── */
 #home {
   position: relative;
+  height: 360px;
   height: min(360px, 50svh);
   display: flex;
   flex-direction: column;
