@@ -24,21 +24,6 @@
   --f-accent:   'Leckerli One', cursive;
 }
 
-/* ── Safari Dynamic Island / notch cap ──
-   A fixed layer that permanently paints over the safe-area inset at the top.
-   The sticky nav already uses env(safe-area-inset-top), but scrolling content
-   can still bleed through the notch on iOS Safari. This cap seals it.        */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: env(safe-area-inset-top, 0px);
-  background: rgba(12,14,16,0.97);
-  z-index: 200;
-  pointer-events: none;
-}
 
 /* ── Reset ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -85,22 +70,15 @@ body::after {
   border-right: 1px solid var(--border);
 }
 
-/* ── Sticky Nav ──
-   env(safe-area-inset-top) covers the Dynamic Island / notch on iOS Safari.
-   viewport-fit=cover must be set on the <meta name="viewport"> tag (see index.html).
-   The nav grows to absorb the inset, and the visible 48px content sits below it.
-   ── */
+/* ── Sticky Nav ── */
 nav {
   position: sticky;
   top: 0;
   z-index: 100;
-  /* Pad the top by the safe area so content clears the Dynamic Island */
-  padding-top: env(safe-area-inset-top, 0px);
-  height: calc(48px + env(safe-area-inset-top, 0px));
+  height: 48px;
   display: flex;
-  align-items: flex-end;   /* logo + links sit at the bottom of the padded bar */
+  align-items: center;
   justify-content: space-between;
-  padding-bottom: 0;
   padding-left: 20px;
   padding-right: 20px;
   gap: 16px;
@@ -108,13 +86,6 @@ nav {
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
   overflow: visible;
-}
-
-/* Give the inner flex children a consistent bottom padding so they don't hug the border */
-.nav-logo,
-.nav-links,
-.nav-hamburger {
-  margin-bottom: 11px;
 }
 
 .nav-logo {
@@ -191,8 +162,8 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
   .nav-links {
     display: none;
     position: absolute;
-    /* Drop the drawer exactly below the full nav height (safe-area + 48px) */
-    top: calc(48px + env(safe-area-inset-top, 0px));
+    /* Drop the drawer exactly below the nav */
+    top: 48px;
     left: 0; right: 0;
     flex-direction: column;
     gap: 0;
@@ -217,7 +188,6 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
 /* ── Hero ── */
 #home {
   position: relative;
-  height: 360px;
   height: min(360px, 50svh);
   display: flex;
   flex-direction: column;
@@ -559,8 +529,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
   -webkit-user-select: none;
 }
 
-.tag-show { color: var(--wave); }
-.tag-news { color: var(--wave); }
+.tag-show, .tag-news { color: var(--wave); }
 
 .ann-title {
   font-family: var(--f-title);
@@ -610,11 +579,6 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
   grid-column: span 2;
   aspect-ratio: 16 / 9;
 }
-
-.g-cell:nth-child(2) { background: var(--surface); }
-.g-cell:nth-child(3) { background: var(--surface); }
-.g-cell:nth-child(4) { background: var(--surface); }
-.g-cell:nth-child(5) { background: var(--surface); }
 
 /* ── Footer ── */
 footer {
