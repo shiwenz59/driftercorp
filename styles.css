@@ -24,6 +24,22 @@
   --f-accent:   'Leckerli One', cursive;
 }
 
+/* ── Safari Dynamic Island / notch cap ──
+   A fixed layer that permanently paints over the safe-area inset at the top.
+   The sticky nav already uses env(safe-area-inset-top), but scrolling content
+   can still bleed through the notch on iOS Safari. This cap seals it.        */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: env(safe-area-inset-top, 0px);
+  background: rgba(12,14,16,0.97);
+  z-index: 200;
+  pointer-events: none;
+}
+
 /* ── Reset ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html  { scroll-behavior: smooth; }
@@ -139,7 +155,6 @@ nav {
   transition: transform 0.25s, opacity 0.25s, background 0.2s;
 }
 
-.nav-hamburger:hover span { background: var(--wave); }
 
 /* Animate to X when open */
 nav.open .nav-hamburger span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
@@ -162,14 +177,12 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
   text-transform: uppercase;
   color: var(--text-mute);
   text-decoration: none;
-  transition: color 0.2s;
   white-space: nowrap;
   user-select: none;
   -webkit-user-select: none;
 }
 
-.nav-links a:hover,
-.nav-links a.active { color: var(--wave); }
+
 
 /* Narrow screen: hide links, show hamburger */
 @media (max-width: 480px) {
@@ -427,8 +440,6 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
   align-items: center;
   border-top: 1px solid var(--border);
   text-decoration: none;
-  cursor: pointer;
-  transition: background 0.15s;
 }
 
 /* First row in each section: sec-head already provides the dividing line above,
@@ -436,9 +447,6 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
 #links .sec-head + .link-row,
 #announcements .sec-head + .ann-item { border-top: none; }
 
-.link-row:not(.locked):hover             { background: var(--surface); }
-.link-row:not(.locked):hover .link-num   { color: var(--wave); }
-.link-row:not(.locked):hover .link-arr   { opacity: 1; transform: translateX(0); }
 
 .link-num {
   font-family: var(--f-body);
@@ -450,7 +458,6 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
   text-align: center;
   border-right: 1px solid var(--border);
   flex-shrink: 0;
-  transition: color 0.15s;
   user-select: none;
   -webkit-user-select: none;
 }
@@ -495,8 +502,6 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
   font-size: 14px;
   color: var(--wave);
   margin-right: 20px;
-  transform: translateX(-8px);
-  transition: opacity 0.2s, transform 0.2s;
   flex-shrink: 0;
 }
 
@@ -596,7 +601,6 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
   background: var(--surface);
   position: relative;
   overflow: hidden;
-  cursor: pointer;
   aspect-ratio: 1;
   /* To add a photo, set inline on the div in index.html:
      style="background-image: url('src/photo.jpg'); background-size: cover; background-position: center;" */
