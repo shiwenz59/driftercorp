@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Leckerli+One&family=Josefin+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#0c0e10">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -22,6 +23,9 @@
       <li><a href="#announcements">Calendar</a></li>
       <li><a href="#photos">Gallery</a></li>
     </ul>
+    <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
   <!-- ── HERO ── -->
@@ -201,6 +205,21 @@
   // Mark JS as active immediately — enables the timed reveal animation.
   // Without this, #main-content stays visible as a no-JS fallback.
   document.documentElement.classList.add('js-ready');
+
+  // Hamburger menu toggle
+  const navEl  = document.querySelector('nav');
+  const burger = document.querySelector('.nav-hamburger');
+  burger.addEventListener('click', () => {
+    const isOpen = navEl.classList.toggle('open');
+    burger.setAttribute('aria-expanded', isOpen);
+  });
+  // Close drawer when a link is tapped
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => {
+      navEl.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+    });
+  });
 
   // Force top of page on every load so hero animation plays correctly
   if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
