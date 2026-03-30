@@ -634,12 +634,12 @@ footer {
 }
 
 /* ── Scroll reveal base ── */
-.reveal {
+.reveal:not(.bio-quote) {
   opacity: 0;
   transition: opacity 1.1s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.reveal.in {
+.reveal.in:not(.bio-quote) {
   opacity: 1;
 }
 

@@ -225,40 +225,50 @@
   if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
   window.scrollTo(0, 0);
 
-  // Scroll reveal — sections wait for hero to finish (~1.7s), quote waits a beat after that
-  const HERO_DONE   = 1700;
-  const QUOTE_DELAY = 500;
+  // Reveal — wait for hero to finish, then use IntersectionObserver per element
+  const HERO_DONE = 1700;
 
   function startReveals() {
-    // Unhide the below-hero wrapper — section borders/backgrounds appear,
-    // then .reveal items animate in via IntersectionObserver below.
+    // Unhide the below-hero wrapper so borders/backgrounds appear
     document.getElementById('main-content').classList.add('visible');
 
-    // rAF ensures the browser paints the opacity:0 state of .reveal children
-    // before the observer fires — so in-viewport elements fade in rather than snap.
+    // One rAF so the browser paints opacity:0 on .reveal elements before
+    // the observer fires — prevents in-viewport items from snapping in instantly
     requestAnimationFrame(() => {
-    const sectionReveals = document.querySelectorAll('.reveal:not(.bio-quote)');
-    const quoteEl        = document.querySelector('.bio-quote');
 
-    // Fade everything in at once
-    sectionReveals.forEach(el => el.classList.add('in'));
+      // Standard fade reveals — fire when element enters viewport
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('in');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.15 });
 
-    // Quote: register observer after delay, but also fire immediately if already in view
-    setTimeout(() => {
-      if (!quoteEl) return;
-      const rect = quoteEl.getBoundingClientRect();
-      const inView = rect.top < window.innerHeight && rect.bottom > 0;
-      if (inView) {
-        quoteEl.classList.add('in');
-      } else {
-        const ioQuote = new IntersectionObserver(entries => {
-          entries.forEach(e => {
-            if (e.isIntersecting) { e.target.classList.add('in'); ioQuote.unobserve(e.target); }
-          });
-        }, { threshold: 0.2 });
-        ioQuote.observe(quoteEl);
+      document.querySelectorAll('.reveal:not(.bio-quote)').forEach(el => io.observe(el));
+
+      // Quote — immediate check first (it's often already in view after hero),
+      // fall back to observer if scrolled below the fold
+      const quoteEl = document.querySelector('.bio-quote');
+      if (quoteEl) {
+        const rect   = quoteEl.getBoundingClientRect();
+        const inView = rect.top < window.innerHeight && rect.bottom > 0;
+        if (inView) {
+          quoteEl.classList.add('in');
+        } else {
+          const ioQuote = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+              if (e.isIntersecting) {
+                e.target.classList.add('in');
+                ioQuote.unobserve(e.target);
+              }
+            });
+          }, { threshold: 0.2 });
+          ioQuote.observe(quoteEl);
+        }
       }
-    }, QUOTE_DELAY);
+
     }); // end requestAnimationFrame
   }
 
