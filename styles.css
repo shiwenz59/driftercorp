@@ -555,11 +555,16 @@ footer {
   animation: rec-blink 1.4s ease-in-out infinite;
 }
 
-/* ── Below-hero wrapper: hidden until hero finishes ── */
+/* ── Below-hero wrapper: visible by default (JS-failure fallback) ── */
+/* JS adds .js-ready to <html> immediately, re-hiding so timed reveal plays */
 #main-content {
+  opacity: 1;
+}
+
+.js-ready #main-content {
   opacity: 0;
 }
-#main-content.visible {
+.js-ready #main-content.visible {
   opacity: 1;
 }
 

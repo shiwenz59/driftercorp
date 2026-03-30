@@ -198,6 +198,10 @@
 </div><!-- /.site-wrap -->
 
 <script>
+  // Mark JS as active immediately — enables the timed reveal animation.
+  // Without this, #main-content stays visible as a no-JS fallback.
+  document.documentElement.classList.add('js-ready');
+
   // Force top of page on every load so hero animation plays correctly
   if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
   window.scrollTo(0, 0);
