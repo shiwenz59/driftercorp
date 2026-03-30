@@ -2,12 +2,256 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Drifter Corp.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Leckerli+One&family=Josefin+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <p>Hello world, this is Drifter Corp.</p>
-  <p>FYI, Harry is obviously gay but that's fine!</p>
-  <img src="IMG_4264.jpeg" alt="harry" width="200">
-  <p>Ebbs N' Flows coming out soon.</p>
+
+<div class="site-wrap">
+
+  <!-- ── NAV ── -->
+  <nav>
+    <a href="#home" class="nav-logo">Drifter Corp.</a>
+    <ul class="nav-links">
+      <li><a href="#bio">About</a></li>
+      <li><a href="#links">Platforms</a></li>
+      <li><a href="#announcements">Calendar</a></li>
+      <li><a href="#photos">Gallery</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section id="home">
+    <div class="hero-photo"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Independent &middot; New York &middot; Est. 2025</p>
+      <h1 class="hero-title">Drifter<br>Corp.</h1>
+      <div class="hero-badge">
+        <span class="dot"></span>
+        Ebbs N&rsquo; Flows &mdash; Coming Soon
+      </div>
+    </div>
+  </section>
+
+  <div id="main-content">
+
+  <!-- ── ABOUT ── -->
+  <section id="bio">
+    <div class="sec-head reveal">
+      <h2>About</h2>
+    </div>
+
+    <em class="bio-quote reveal">"We're all drifting on this journey with no end."</em>
+
+    <p class="bio-text reveal">
+      <strong>Drifter Corp.</strong> is an independent band formed in New York City ...placeholder...
+    </p>
+
+    <div class="bio-grid reveal">
+
+      <div class="member-card">
+        <div class="member-pic" style="background-image: url('src/harry.jpg')"></div>
+        <div class="member-info">
+          <div class="member-name">Harry Z.</div>
+          <div class="member-role">Producer /<br>Guitar</div>
+        </div>
+      </div>
+
+      <div class="member-card">
+        <div class="member-pic" style="background-image: url('src/jeff.jpg')"></div>
+        <div class="member-info">
+          <div class="member-name">Jeffery Z.</div>
+          <div class="member-role">Guitar /<br>Songwriter</div>
+        </div>
+      </div>
+
+      <div class="member-card">
+        <div class="member-pic" style="background-image: url('src/jerry.jpg')"></div>
+        <div class="member-info">
+          <div class="member-name">Jerry H.</div>
+          <div class="member-role">Bass /<br>Manager</div>
+        </div>
+      </div>
+
+      <div class="member-card">
+        <div class="member-pic" style="background-image: url('src/shiwen.jpg')"></div>
+        <div class="member-info">
+          <div class="member-name">Shiwen Z.</div>
+          <div class="member-role">Vocals / Keys /<br>Songwriter</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── PLATFORMS ── -->
+  <section id="links">
+    <div class="sec-head reveal">
+      <h2>Platforms</h2>
+    </div>
+
+    <!-- Locked: Samply -->
+    <div class="link-row locked">
+      <span class="link-num">01</span>
+      <div class="link-body">
+        <span class="link-name">Samply</span>
+        <span class="link-handle">Private listening</span>
+      </div>
+      <span class="link-badge badge-lock">Members Only</span>
+    </div>
+
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/drifter_corp/" target="_blank" rel="noopener" class="link-row">
+      <span class="link-num">02</span>
+      <div class="link-body">
+        <span class="link-name">Instagram</span>
+        <span class="link-handle">@drifter_corp</span>
+      </div>
+      <span class="link-arr">&#8594;</span>
+    </a>
+
+    <!-- RedNote -->
+    <a href="https://xhslink.com/m/O76ZBqVad0" target="_blank" rel="noopener" class="link-row">
+      <span class="link-num">03</span>
+      <div class="link-body">
+        <span class="link-name">RedNote</span>
+        <span class="link-handle">&#23567;&#32418;&#20070; &middot; @Drifter Corp.</span>
+      </div>
+      <span class="link-arr">&#8594;</span>
+    </a>
+
+    <!-- TikTok -->
+    <a href="https://www.tiktok.com/@drifter_corp" target="_blank" rel="noopener" class="link-row">
+      <span class="link-num">04</span>
+      <div class="link-body">
+        <span class="link-name">TikTok</span>
+        <span class="link-handle">@drifter_corp</span>
+      </div>
+      <span class="link-arr">&#8594;</span>
+    </a>
+  </section>
+
+  <!-- ── ANNOUNCEMENTS ── -->
+  <section id="announcements">
+    <div class="sec-head reveal">
+      <h2>Calendar</h2>
+    </div>
+
+    <div class="ann-item reveal">
+      <div class="ann-date">
+        <span class="month">April</span>
+        <span class="day">05</span>
+      </div>
+      <div class="ann-body">
+        <span class="ann-tag tag-show">Live Show</span>
+        <div class="ann-title">Live at Mercury Lounge</div>
+        <div class="ann-desc">New York &middot; 8PM &middot; <a href="https://docs.google.com/forms/d/e/1FAIpQLScs3TZ6ZxWA7l-RvgtfQZhmn81gNiqZZZZ6KdPJdkAt2TNaZQ/viewform" target="_blank" rel="noopener">Register</a></div>
+      </div>
+    </div>
+
+    <div class="ann-item reveal">
+      <div class="ann-date">
+        <span class="month">April</span>
+        <span class="day">19</span>
+      </div>
+      <div class="ann-body">
+        <span class="ann-tag tag-news">Event</span>
+        <div class="ann-title">Ebbs N&rsquo; Flows &mdash; Listening Party</div>
+        <div class="ann-desc">Pre-launch event for our first full-length record.<br> New York &middot; TBA</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PHOTOS ── -->
+  <section id="photos">
+    <div class="sec-head reveal">
+      <h2>Gallery</h2>
+    </div>
+
+    <div class="gallery">
+
+      <div class="g-cell wide" style="background-image: url('src/photo1.jpg'); background-size: cover; background-position: center;">
+      </div>
+
+      <div class="g-cell" style="background-image: url('src/photo2.jpg'); background-size: cover; background-position: center;">
+      </div>
+
+      <div class="g-cell" style="background-image: url('src/photo3.jpg'); background-size: cover; background-position: center;">
+      </div>
+
+      <div class="g-cell wide" style="background-image: url('src/photo4.jpg'); background-size: cover; background-position: center;">
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <span class="ft-copy">&copy; Drifter Corp. All rights reserved.</span>
+  </footer>
+  </div><!-- /#main-content -->
+
+</div><!-- /.site-wrap -->
+
+<script>
+  // Force top of page on every load so hero animation plays correctly
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  window.scrollTo(0, 0);
+
+  // Scroll reveal — sections wait for hero to finish (~1.7s), quote waits a beat after that
+  const HERO_DONE   = 1700;
+  const QUOTE_DELAY = 500;
+
+  function startReveals() {
+    // Unhide the below-hero wrapper — section borders/backgrounds appear,
+    // then .reveal items animate in via IntersectionObserver below.
+    document.getElementById('main-content').classList.add('visible');
+
+    // rAF ensures the browser paints the opacity:0 state of .reveal children
+    // before the observer fires — so in-viewport elements fade in rather than snap.
+    requestAnimationFrame(() => {
+    const sectionReveals = document.querySelectorAll('.reveal:not(.bio-quote)');
+    const quoteEl        = document.querySelector('.bio-quote');
+
+    // Fade everything in at once
+    sectionReveals.forEach(el => el.classList.add('in'));
+
+    // Quote: register observer after delay, but also fire immediately if already in view
+    setTimeout(() => {
+      if (!quoteEl) return;
+      const rect = quoteEl.getBoundingClientRect();
+      const inView = rect.top < window.innerHeight && rect.bottom > 0;
+      if (inView) {
+        quoteEl.classList.add('in');
+      } else {
+        const ioQuote = new IntersectionObserver(entries => {
+          entries.forEach(e => {
+            if (e.isIntersecting) { e.target.classList.add('in'); ioQuote.unobserve(e.target); }
+          });
+        }, { threshold: 0.2 });
+        ioQuote.observe(quoteEl);
+      }
+    }, QUOTE_DELAY);
+    }); // end requestAnimationFrame
+  }
+
+  setTimeout(startReveals, HERO_DONE);
+
+  // Active nav highlight on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 70) cur = s.id; });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + cur ? 'var(--wave)' : '';
+    });
+  }, { passive: true });
+</script>
+
 </body>
 </html>
