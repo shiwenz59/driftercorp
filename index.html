@@ -236,9 +236,12 @@
     });
   });
 
-  // Force top of page on every load so hero animation plays correctly
+  // Force top of page on every load so hero animation plays correctly.
+  // scrollRestoration must be set early (before load), but the actual scroll
+  // must happen on 'load' — some browsers (iOS Safari) restore scroll position
+  // after DOMContentLoaded, which would override an earlier scrollTo call.
   if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-  window.scrollTo(0, 0);
+  window.addEventListener('load', function () { window.scrollTo(0, 0); });
 
   // Reveal — wait for hero to finish, then use IntersectionObserver per element
   const HERO_DONE = 2600;
