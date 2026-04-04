@@ -709,6 +709,7 @@ footer {
 @media (min-width: 600px) {
   .hero-title { font-size: 96px; }
   .site-wrap  {
+    max-width: 680px;
     border-left-color:  var(--border-hi);
     border-right-color: var(--border-hi);
   }
