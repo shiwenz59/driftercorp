@@ -80,18 +80,6 @@ body::after {
   min-height: 100vh;
   border-left: 1px solid var(--border);
   border-right: 1px solid var(--border);
-  background: rgba(12, 14, 16, 0.28);
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-}
-
-/* On mobile the column is full-width — lighten further so waves show through */
-@media (max-width: 480px) {
-  .site-wrap {
-    background: rgba(12, 14, 16, 0.2);
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
-  }
 }
 
 /* ── Sticky Nav ── */
@@ -673,10 +661,23 @@ footer {
 /* JS adds .js-ready to <html> immediately, re-hiding so timed reveal plays */
 #main-content {
   opacity: 1;
+  background: rgba(12, 14, 16, 0.28);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+/* On mobile the column is full-width — lighten further so waves show through */
+@media (max-width: 480px) {
+  #main-content {
+    background: rgba(12, 14, 16, 0.2);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+  }
 }
 
 .js-ready #main-content {
   opacity: 0;
+  transition: opacity 0.7s ease;
 }
 .js-ready #main-content.visible {
   opacity: 1;
