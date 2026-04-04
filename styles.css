@@ -61,13 +61,37 @@ body::after {
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--wave); }
 
+/* ── Waves background ── */
+#waves-bg {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
 /* ── Site column ── */
 .site-wrap {
+  position: relative;
+  z-index: 1;
   max-width: 480px;
   margin: 0 auto;
   min-height: 100vh;
   border-left: 1px solid var(--border);
   border-right: 1px solid var(--border);
+  background: rgba(12, 14, 16, 0.28);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+/* On mobile the column is full-width — lighten further so waves show through */
+@media (max-width: 480px) {
+  .site-wrap {
+    background: rgba(12, 14, 16, 0.2);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+  }
 }
 
 /* ── Sticky Nav ── */
@@ -188,7 +212,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
 /* ── Hero ── */
 #home {
   position: relative;
-  height: min(360px, 50svh);
+  aspect-ratio: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -298,6 +322,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
 /* ── About / Bio ── */
 #bio {
   padding: 0 20px 28px;
+  background: rgba(12, 14, 16, 0.55);
 }
 
 /* sec-head inside #bio: extend border-bottom to full section width
@@ -403,6 +428,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
 /* ── Platform Links ── */
 #links {
   border-top: 1px solid var(--border);
+  background: rgba(12, 14, 16, 0.55);
 }
 
 .link-row {
@@ -478,6 +504,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
 /* ── Announcements ── */
 #announcements {
   border-top: 1px solid var(--border);
+  background: rgba(12, 14, 16, 0.55);
 }
 
 .ann-item {
@@ -557,7 +584,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
 }
 
 /* ── Gallery ── */
-#photos { border-top: 1px solid var(--border); }
+#photos { border-top: 1px solid var(--border); background: rgba(12, 14, 16, 0.55); }
 
 .gallery {
   display: grid;
@@ -583,6 +610,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
 /* ── Footer ── */
 footer {
   padding: 20px;
+  background: rgba(12, 14, 16, 0.55);
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -679,7 +707,6 @@ footer {
 /* ── Desktop ── */
 @media (min-width: 600px) {
   .hero-title { font-size: 96px; }
-  #home       { height: min(420px, 55svh); }
   .site-wrap  {
     border-left-color:  var(--border-hi);
     border-right-color: var(--border-hi);
