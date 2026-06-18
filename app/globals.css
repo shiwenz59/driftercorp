@@ -345,10 +345,11 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-5px) rotate(-
 
 .bio-quote {
   font-family: var(--f-accent);
-  font-size: clamp(var(--fs-sm), 4.2vw, var(--fs-md));
+  font-size: clamp(9px, 3.4vw, 22px);
   color: var(--accent);
   margin: var(--sp-lg) 0 var(--sp-sm);
   display: block;
+  white-space: nowrap;
   transform: rotate(-1.5deg);
   transform-origin: left center;
   padding-left: var(--sp-xs);
