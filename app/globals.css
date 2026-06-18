@@ -1,7 +1,6 @@
 /* ════════════════════════════════════════
-   DRIFTER CORP. — styles.css
-   Fonts: Futura (title) · Courier (body) · Leckerli One (accent)
-   Theme: washed-out seawave blue
+   DRIFTER CORP. — globals.css
+   Fonts loaded via next/font/google in layout.tsx
    ════════════════════════════════════════ */
 
 /* ── Variables ── */
@@ -15,13 +14,12 @@
   --text:       #dde6ea;
   --text-mute:  #4a5c64;
 
-  /* Seawave — washed-out, timeless blue */
   --wave:       #276792;
 
-  /* Fonts */
-  --f-title:    'Futura', 'Century Gothic', 'Josefin Sans', sans-serif;
+  /* Fonts — variables injected by next/font at runtime */
+  --f-title:    'Futura', 'Century Gothic', var(--font-josefin), sans-serif;
   --f-body:     'Courier New', Courier, monospace;
-  --f-accent:   'Leckerli One', cursive;
+  --f-accent:   var(--font-leckerli), cursive;
 }
 
 
@@ -138,7 +136,6 @@ nav {
   transition: transform 0.25s, opacity 0.25s, background 0.2s;
 }
 
-
 /* Animate to X when open */
 nav.open .nav-hamburger span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
 nav.open .nav-hamburger span:nth-child(2) { opacity: 0; }
@@ -165,8 +162,6 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
   -webkit-user-select: none;
 }
 
-
-
 /* Narrow screen: hide links, show hamburger */
 @media (max-width: 480px) {
   .nav-hamburger { display: flex; }
@@ -174,7 +169,6 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
   .nav-links {
     display: none;
     position: absolute;
-    /* Drop the drawer exactly below the nav */
     top: 48px;
     left: 0; right: 0;
     flex-direction: column;
@@ -210,17 +204,15 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
   overflow: hidden;
 }
 
-/* Band photo slot — add your photo by setting background-image below */
 .hero-photo {
   position: absolute;
   inset: 0;
   background-color: var(--surface);
   background-size: cover;
   background-position: center top;
-  background-image: url('src/band-photo.jpg');
+  background-image: url('/band-photo.jpg');
 }
 
-/* Dark overlay so text stays readable over any photo */
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -313,8 +305,6 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
   background: rgba(12, 14, 16, 0.55);
 }
 
-/* sec-head inside #bio: extend border-bottom to full section width
-   despite the 20px horizontal padding on the parent */
 #bio .sec-head {
   padding-left: 20px;
   padding-right: 20px;
@@ -334,7 +324,6 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
   font-weight: bold;
 }
 
-/* Leckerli accent quote — always one line, scales with viewport */
 .bio-quote {
   font-family: var(--f-accent);
   font-size: clamp(11px, 3.9vw, 17px);
@@ -372,8 +361,6 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
   gap: 12px;
 }
 
-/* Profile picture circle — set background-image inline on each .member-pic in index.html
-   e.g. <div class="member-pic" style="background-image: url('src/harry.jpg')"> */
 .member-pic {
   width: 40px;
   height: 40px;
@@ -383,13 +370,8 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
   background-size: cover;
   background-position: center;
   flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
 }
-
-.member-pic svg { opacity: 0.3; }
 
 .member-name {
   font-family: var(--f-title);
@@ -426,11 +408,8 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
   text-decoration: none;
 }
 
-/* First row in each section: sec-head already provides the dividing line above,
-   so suppress the redundant border-top on the first item */
 #links .sec-head + .link-row,
 #announcements .sec-head + .ann-item { border-top: none; }
-
 
 .link-num {
   font-family: var(--f-body);
@@ -468,19 +447,6 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
   user-select: none;
   -webkit-user-select: none;
 }
-
-.link-badge {
-  margin-right: 20px;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  padding: 4px 10px;
-  border: 1px solid;
-  flex-shrink: 0;
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-.badge-lock { color: var(--wave);  border-color: var(--wave); }
 
 .link-arr {
   font-size: 14px;
@@ -591,8 +557,6 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
   position: relative;
   overflow: hidden;
   aspect-ratio: 1;
-  /* To add a photo, set inline on the div in index.html:
-     style="background-image: url('src/photo.jpg'); background-size: cover; background-position: center;" */
 }
 
 .g-cell.wide {
@@ -663,7 +627,7 @@ footer {
 }
 
 /* ── Below-hero wrapper: visible by default (JS-failure fallback) ── */
-/* JS adds .js-ready to <html> immediately, re-hiding so timed reveal plays */
+/* Inline script in layout.tsx adds js-ready to <html>, hiding content for timed reveal */
 #main-content {
   opacity: 1;
   background: rgba(12, 14, 16, 0.28);
@@ -671,7 +635,6 @@ footer {
   -webkit-backdrop-filter: blur(3px);
 }
 
-/* On mobile the column is full-width — lighten further so waves show through */
 @media (max-width: 480px) {
   #main-content {
     background: rgba(12, 14, 16, 0.2);
@@ -697,8 +660,6 @@ footer {
 .reveal.in:not(.bio-quote) {
   opacity: 1;
 }
-
-/* Stagger children of grids / lists when parent is .reveal — removed (fade-in-all-at-once) */
 
 /* ── Handwritten quote left-to-right reveal ── */
 .bio-quote {
