@@ -6,7 +6,7 @@ const members = [
   { name: 'Harry Zhao',   role: ['Producer /', 'Guitar'],           img: '/harry.jpg'  },
   { name: 'Jeffery Zhao', role: ['Guitar /',   'Songwriter'],       img: '/jeff.jpg'   },
   { name: 'Jerry Huang',  role: ['Bass /',     'Manager'],          img: '/jerry.jpg'  },
-  { name: 'Shiwen Zhu',   role: ['Vocals / Keys /', 'Songwriter'],  img: '/shiwen.jpg' },
+  { name: 'Shiwen Zhu',   role: ['Vocals /',         'Keys / Songwriter'],  img: '/shiwen.jpg' },
 ]
 
 const platforms = [
@@ -66,7 +66,7 @@ export default function Page() {
                 <div className="member-card" key={m.name}>
                   <div className="member-pic" style={{ backgroundImage: `url('${m.img}')` }} />
                   <div className="member-info">
-                    <div className="member-name">{m.name}</div>
+                    <div className="member-name">{m.name.split(' ')[0]}<br />{m.name.split(' ').slice(1).join(' ')}</div>
                     <div className="member-role">{m.role[0]}<br />{m.role[1]}</div>
                   </div>
                 </div>
@@ -117,7 +117,7 @@ export default function Page() {
                 <span className="ann-tag tag-news">Event</span>
                 <div className="ann-title">Ebbs N&rsquo; Flows &mdash; Listening Party</div>
                 <div className="ann-desc">
-                  Pre-launch event for our full-length record.<br />
+                  Pre-launch listening event.<br />
                   New York &middot; Saturday &middot; 7&ndash;9PM &middot;{' '}
                   <a href="https://partiful.com/e/O4F2eOzlIz8aVC4YGdDz?c=9TKsns9N" target="_blank" rel="noopener noreferrer">Register</a>
                 </div>

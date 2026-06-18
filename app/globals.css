@@ -27,7 +27,7 @@
   --fs-xs:  11px;   /* micro labels: tags, eyebrows, nav, footer */
   --fs-sm:  14px;   /* body text: bios, names, descriptions */
   --fs-md:  17px;   /* accent: badge, arrow */
-  --fs-lg:  32px;   /* display sub: calendar day number */
+  --fs-lg:  22px;   /* display sub: calendar day number */
 }
 
 /* ── Font tokens ── */
@@ -337,7 +337,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-5px) rotate(-
 .bio-text {
   font-family: var(--f-body);
   font-size: var(--fs-sm);
-  color: var(--text-mute);
+  color: var(--text);
   line-height: 1.9;
 }
 
@@ -474,7 +474,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-5px) rotate(-
 .link-arr {
   font-size: var(--fs-md);
   color: var(--accent);
-  margin-right: var(--sp-lg);
+  margin-right: var(--sp-md);
   flex-shrink: 0;
 }
 
@@ -497,7 +497,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-5px) rotate(-
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: var(--sp-md) var(--sp-xs);
+  padding: var(--sp-md) var(--sp-sm);
   gap: var(--sp-xs);
 }
 
