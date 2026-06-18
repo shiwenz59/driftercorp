@@ -119,10 +119,10 @@ export default function Page() {
           <section id="photos">
             <div className="sec-head reveal"><h2>Gallery</h2></div>
             <div className="gallery">
-              <div className="g-cell wide" style={{ backgroundImage: "url('/photo1.jpg')", backgroundSize: 'cover', backgroundPosition: 'center' }} />
-              <div className="g-cell"      style={{ backgroundImage: "url('/photo2.jpg')", backgroundSize: 'cover', backgroundPosition: 'center' }} />
-              <div className="g-cell"      style={{ backgroundImage: "url('/photo3.jpg')", backgroundSize: 'cover', backgroundPosition: 'center' }} />
-              <div className="g-cell wide" style={{ backgroundImage: "url('/photo4.jpg')", backgroundSize: 'cover', backgroundPosition: 'center' }} />
+              <div className="g-cell wide" style={{ backgroundImage: "url('/photo1.jpg')" }} />
+              <div className="g-cell"      style={{ backgroundImage: "url('/photo2.jpg')" }} />
+              <div className="g-cell"      style={{ backgroundImage: "url('/photo3.jpg')" }} />
+              <div className="g-cell wide" style={{ backgroundImage: "url('/photo4.jpg')" }} />
             </div>
           </section>
 
