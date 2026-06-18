@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import { Leckerli_One, Josefin_Sans } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 const leckerliOne = Leckerli_One({
@@ -36,6 +37,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Runs before React hydration: enables timed reveal animation and preserves scroll */}
         <script dangerouslySetInnerHTML={{ __html: `document.documentElement.classList.add('js-ready');if('scrollRestoration'in history)history.scrollRestoration='manual';` }} />
         {children}
+        <Analytics />
       </body>
     </html>
   )

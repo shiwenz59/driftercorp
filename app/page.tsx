@@ -2,6 +2,7 @@ import WavesBg from '@/components/WavesBg'
 import Nav from '@/components/Nav'
 import MainContent from '@/components/MainContent'
 import BioText from '@/components/BioText'
+import PlatformLinks from '@/components/PlatformLinks'
 
 const members = [
   { name: 'Harry Zhao',   role: ['Producer /', 'Guitar'],           img: '/harry.jpg'  },
@@ -67,16 +68,7 @@ export default function Page() {
           {/* ── Platforms ── */}
           <section id="links">
             <div className="sec-head reveal"><h2>Platforms</h2></div>
-            {platforms.map(p => (
-              <a key={p.num} href={p.href} target="_blank" rel="noopener noreferrer" className="link-row">
-                <span className="link-num">{p.num}</span>
-                <div className="link-body">
-                  <span className="link-name">{p.name}</span>
-                  <span className="link-handle">{p.handle}</span>
-                </div>
-                <span className="link-arr">&#8594;</span>
-              </a>
-            ))}
+            <PlatformLinks platforms={platforms} />
           </section>
 
           {/* ── Calendar ── */}
