@@ -336,11 +336,22 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-5px) rotate(-
   font-size: var(--fs-sm);
   color: var(--text);
   line-height: 1.9;
+  text-align: left;
 }
 
 .bio-text strong {
   color: var(--text);
   font-weight: bold;
+}
+
+.bio-expand {
+  font-family: var(--f-body);
+  font-size: var(--fs-sm);
+  color: var(--accent);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
 }
 
 .bio-quote {

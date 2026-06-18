@@ -1,6 +1,7 @@
 import WavesBg from '@/components/WavesBg'
 import Nav from '@/components/Nav'
 import MainContent from '@/components/MainContent'
+import BioText from '@/components/BioText'
 
 const members = [
   { name: 'Harry Zhao',   role: ['Producer /', 'Guitar'],           img: '/harry.jpg'  },
@@ -48,18 +49,7 @@ export default function Page() {
               &ldquo;We&rsquo;re all drifting on this journey with no end.&rdquo;
             </em>
 
-            <p className="bio-text reveal">
-              <strong>Drifter Corp.</strong> is a four-piece prog rock band from New York City,
-              brought together after crossing paths at an NYU gig and realizing they had
-              something worth making. They get together every week at a studio in Long Island
-              to write, record, and produce their own stuff &mdash; and they move fast: three months
-              in, their debut album Ebbs N&rsquo; Flows is already in the mixing stage. The album is
-              8 tracks deep, exploring nihilism and the everyday things we all deal with &mdash;
-              politics, love, career, social pressure, and more. None of them are classically
-              trained, and that&rsquo;s kind of the point. They make music that&rsquo;s fun to listen to
-              but has something to say, using it as a way to put real thoughts and ideas out
-              into the world. Ebbs N&rsquo; Flows is coming soon. Reach them at driftercorp@gmail.com.
-            </p>
+            <BioText />
 
             <div className="bio-grid reveal">
               {members.map(m => (
