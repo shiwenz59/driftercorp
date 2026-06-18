@@ -10,7 +10,7 @@
   --surface:   #111518;
   --border:    #1e2428;
   --text:      #dde6ea;
-  --text-mute: #4a5c64;
+  --text-mute: #8aacb8;
   --accent:    #276792;
 }
 
@@ -238,17 +238,13 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-5px) rotate(-
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgb(var(--bg-ch) / 0.55) 0%,
-    rgb(var(--bg-ch) / 0.72) 60%,
-    rgb(var(--bg-ch) / 0.92) 100%
-  );
+  background: rgb(var(--bg-ch) / 0.50);
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
+  width: 100%;
   padding: 0 var(--sp-md);
   user-select: none;
   -webkit-user-select: none;
