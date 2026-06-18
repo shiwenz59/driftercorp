@@ -1,10 +1,17 @@
 'use client'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export default function Nav() {
   const [open, setOpen] = useState(false)
 
   function close() { setOpen(false) }
+
+  useEffect(() => {
+    if (!open) return
+    const onScroll = () => setOpen(false)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [open])
 
   return (
     <nav className={open ? 'open' : undefined}>
