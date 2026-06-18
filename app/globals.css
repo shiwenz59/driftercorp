@@ -365,7 +365,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
   height: 40px;
   border-radius: 50%;
   border: 1px solid var(--border);
-  background-color: var(--surface);
+  background-color: var(--bg);
   background-size: cover;
   background-position: center;
   flex-shrink: 0;
@@ -405,6 +405,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
   align-items: center;
   border-top: 1px solid var(--border);
   text-decoration: none;
+  background: var(--surface);
 }
 
 #links .sec-head + .link-row,
@@ -464,6 +465,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
   display: grid;
   grid-template-columns: 60px 1fr;
   border-top: 1px solid var(--border);
+  background: var(--surface);
 }
 
 .ann-date {
@@ -537,7 +539,6 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
 }
 
 .ann-item--past {
-  filter: grayscale(1) opacity(0.4);
   pointer-events: none;
 }
 
