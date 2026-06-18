@@ -7,7 +7,7 @@ const members = [
   { name: 'Harry Zhao',   role: ['Producer /', 'Guitar'],           img: '/harry.jpg'  },
   { name: 'Jeffery Zhao', role: ['Guitar /',   'Songwriter'],       img: '/jeff.jpg'   },
   { name: 'Jerry Huang',  role: ['Bass /',     'Manager'],          img: '/jerry.jpg'  },
-  { name: 'Shiwen Zhu',   role: ['Vocals /',         'Keys / Songwriter'],  img: '/shiwen.jpg' },
+  { name: 'Shiwen Zhu',   role: ['Vocals/Keys/',      'Songwriter'],         img: '/shiwen.jpg' },
 ]
 
 const platforms = [
@@ -56,7 +56,7 @@ export default function Page() {
                 <div className="member-card" key={m.name}>
                   <div className="member-pic" style={{ backgroundImage: `url('${m.img}')` }} />
                   <div className="member-info">
-                    <div className="member-name">{m.name.split(' ')[0]}<br />{m.name.split(' ').slice(1).join(' ')}</div>
+                    <div className="member-name">{m.name}</div>
                     <div className="member-role">{m.role[0]}<br />{m.role[1]}</div>
                   </div>
                 </div>
