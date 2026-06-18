@@ -1,6 +1,7 @@
 'use client'
 import { useEffect, useRef, type ReactNode } from 'react'
 
+// globals.css: .hero-badge { animation-delay: 1.55s } + hero-item-in { duration: 0.9s } = 2.45s + buffer
 const HERO_DONE = 2600
 
 export default function MainContent({ children }: { children: ReactNode }) {

@@ -78,6 +78,8 @@ export default function WavesBg() {
     let bounding = { width: 0, height: 0 }
     let lines: Point[][] = []
     let frameId: number
+    let timeOffset = 0   // accumulated ms spent hidden — keeps wave position continuous on resume
+    let hiddenAt = 0
 
     function setSize() {
       bounding = { width: window.innerWidth, height: window.innerHeight }
@@ -130,7 +132,7 @@ export default function WavesBg() {
     }
 
     function tick(t: number) {
-      movePoints(t)
+      movePoints(t - timeOffset)
       drawLines()
       frameId = requestAnimationFrame(tick)
     }
@@ -142,9 +144,21 @@ export default function WavesBg() {
     const onResize = () => { setSize(); setLines() }
     window.addEventListener('resize', onResize)
 
+    const onVisibility = () => {
+      if (document.hidden) {
+        cancelAnimationFrame(frameId)
+        hiddenAt = performance.now()
+      } else {
+        timeOffset += performance.now() - hiddenAt
+        frameId = requestAnimationFrame(tick)
+      }
+    }
+    document.addEventListener('visibilitychange', onVisibility)
+
     return () => {
       cancelAnimationFrame(frameId)
       window.removeEventListener('resize', onResize)
+      document.removeEventListener('visibilitychange', onVisibility)
     }
   }, [])
 
