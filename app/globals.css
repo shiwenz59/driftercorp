@@ -22,6 +22,14 @@
   --sp-lg: 28px;   /* section breathing room */
 }
 
+/* ── Type scale ── */
+:root {
+  --fs-xs:  11px;   /* micro labels: tags, eyebrows, nav, footer */
+  --fs-sm:  14px;   /* body text: bios, names, descriptions */
+  --fs-md:  17px;   /* accent: badge, arrow */
+  --fs-lg:  32px;   /* display sub: calendar day number */
+}
+
 /* ── Font tokens ── */
 :root {
   --f-title:  'Futura', 'Century Gothic', var(--font-josefin), sans-serif;
@@ -38,7 +46,7 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--f-body);
-  font-size: 13px;
+  font-size: var(--fs-sm);
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   cursor: default;
@@ -107,7 +115,7 @@ nav {
 
 .nav-logo {
   font-family: var(--f-title);
-  font-size: 13px;
+  font-size: var(--fs-sm);
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -159,7 +167,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-5px) rotate(-
 
 .nav-links a {
   font-family: var(--f-body);
-  font-size: 9px;
+  font-size: var(--fs-xs);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--text-mute);
@@ -193,7 +201,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-5px) rotate(-
   .nav-links a {
     display: block;
     padding: var(--sp-sm) var(--sp-md);
-    font-size: 10px;
+    font-size: var(--fs-xs);
     letter-spacing: 0.2em;
   }
 }
@@ -241,7 +249,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-5px) rotate(-
 
 .hero-eyebrow {
   font-family: var(--f-body);
-  font-size: 9px;
+  font-size: var(--fs-xs);
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--text-mute);
@@ -250,7 +258,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-5px) rotate(-
 
 .hero-title {
   font-family: var(--f-title);
-  font-size: clamp(48px, 18vw, 72px);
+  font-size: clamp(60px, 18vw, 80px);
   font-weight: 700;
   line-height: 0.9;
   letter-spacing: 0.08em;
@@ -266,7 +274,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-5px) rotate(-
   border: 1px solid var(--accent);
   padding: var(--sp-xs) var(--sp-md);
   font-family: var(--f-accent);
-  font-size: 15px;
+  font-size: var(--fs-md);
   color: var(--accent);
 }
 
@@ -289,7 +297,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-5px) rotate(-
 
 .sec-head h2 {
   font-family: var(--f-title);
-  font-size: 10px;
+  font-size: var(--fs-xs);
   font-weight: 700;
   letter-spacing: 0.3em;
   text-transform: uppercase;
@@ -321,7 +329,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-5px) rotate(-
 
 .bio-text {
   font-family: var(--f-body);
-  font-size: 12px;
+  font-size: var(--fs-sm);
   color: var(--text-mute);
   line-height: 1.9;
 }
@@ -333,7 +341,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-5px) rotate(-
 
 .bio-quote {
   font-family: var(--f-accent);
-  font-size: clamp(11px, 3.9vw, 17px);
+  font-size: clamp(var(--fs-sm), 4.2vw, var(--fs-md));
   color: var(--accent);
   margin: var(--sp-lg) 0 var(--sp-sm);
   display: block;
@@ -382,7 +390,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-5px) rotate(-
 
 .member-name {
   font-family: var(--f-title);
-  font-size: 11px;
+  font-size: var(--fs-sm);
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -393,7 +401,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-5px) rotate(-
 
 .member-role {
   font-family: var(--f-body);
-  font-size: 9px;
+  font-size: var(--fs-xs);
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--text-mute);
@@ -421,7 +429,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-5px) rotate(-
 
 .link-num {
   font-family: var(--f-body);
-  font-size: 9px;
+  font-size: var(--fs-xs);
   color: var(--text-mute);
   letter-spacing: 0.1em;
   padding: var(--sp-md) 0;
@@ -438,7 +446,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-5px) rotate(-
 .link-name {
   display: block;
   font-family: var(--f-title);
-  font-size: 13px;
+  font-size: var(--fs-sm);
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -450,14 +458,14 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-5px) rotate(-
 
 .link-handle {
   font-family: var(--f-body);
-  font-size: 10px;
+  font-size: var(--fs-xs);
   color: var(--text-mute);
   user-select: none;
   -webkit-user-select: none;
 }
 
 .link-arr {
-  font-size: 14px;
+  font-size: var(--fs-md);
   color: var(--accent);
   margin-right: var(--sp-lg);
   flex-shrink: 0;
@@ -488,7 +496,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-5px) rotate(-
 
 .ann-date .month {
   font-family: var(--f-body);
-  font-size: 8px;
+  font-size: var(--fs-xs);
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--accent);
@@ -498,7 +506,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-5px) rotate(-
 
 .ann-date .day {
   font-family: var(--f-title);
-  font-size: 26px;
+  font-size: var(--fs-lg);
   font-weight: 700;
   line-height: 1;
   color: var(--text);
@@ -511,7 +519,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-5px) rotate(-
 .ann-tag {
   display: block;
   font-family: var(--f-body);
-  font-size: 8px;
+  font-size: var(--fs-xs);
   letter-spacing: 0.2em;
   text-transform: uppercase;
   margin-bottom: var(--sp-xs);
@@ -523,7 +531,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-5px) rotate(-
 
 .ann-title {
   font-family: var(--f-title);
-  font-size: 12px;
+  font-size: var(--fs-sm);
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -536,7 +544,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-5px) rotate(-
 
 .ann-desc {
   font-family: var(--f-body);
-  font-size: 11px;
+  font-size: var(--fs-sm);
   color: var(--text-mute);
   line-height: 1.55;
 }
@@ -584,7 +592,7 @@ footer {
 
 .ft-copy {
   font-family: var(--f-body);
-  font-size: 9px;
+  font-size: var(--fs-xs);
   letter-spacing: 0.1em;
   color: var(--text-mute);
   user-select: none;
@@ -681,7 +689,7 @@ footer {
 
 /* ── Desktop ── */
 @media (min-width: 600px) {
-  .hero-title { font-size: 96px; }
+  .hero-title { font-size: 100px; }
   .site-wrap  {
     max-width: 680px;
     border-left-color:  var(--border);
