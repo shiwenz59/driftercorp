@@ -3,23 +3,22 @@
    Fonts loaded via next/font/google in layout.tsx
    ════════════════════════════════════════ */
 
-/* ── Variables ── */
+/* ── Color tokens ── */
 :root {
-  --bg:         #0c0e10;
-  --surface:    #111518;
-  --surface-hi: #161b1f;
-  --border:     #1e2428;
-  --border-hi:  #2a3238;
+  --bg:        #0c0e10;
+  --bg-ch:     12 14 16;   /* RGB channels — used for opacity variants via rgb(var(--bg-ch) / X) */
+  --surface:   #111518;
+  --border:    #1e2428;
+  --text:      #dde6ea;
+  --text-mute: #4a5c64;
+  --accent:    #276792;
+}
 
-  --text:       #dde6ea;
-  --text-mute:  #4a5c64;
-
-  --wave:       #276792;
-
-  /* Fonts — variables injected by next/font at runtime */
-  --f-title:    'Futura', 'Century Gothic', var(--font-josefin), sans-serif;
-  --f-body:     'Courier New', Courier, monospace;
-  --f-accent:   var(--font-leckerli), cursive;
+/* ── Font tokens ── */
+:root {
+  --f-title:  'Futura', 'Century Gothic', var(--font-josefin), sans-serif;
+  --f-body:   'Courier New', Courier, monospace;
+  --f-accent: var(--font-leckerli), cursive;
 }
 
 
@@ -57,7 +56,7 @@ body::after {
 /* Scrollbar */
 ::-webkit-scrollbar       { width: 3px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--wave); }
+::-webkit-scrollbar-thumb { background: var(--accent); }
 
 /* ── Waves background ── */
 #waves-bg {
@@ -92,7 +91,7 @@ nav {
   padding-left: 20px;
   padding-right: 20px;
   gap: 16px;
-  background: rgba(12,14,16,0.93);
+  background: rgb(var(--bg-ch) / 0.93);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
   overflow: visible;
@@ -173,7 +172,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
     left: 0; right: 0;
     flex-direction: column;
     gap: 0;
-    background: rgba(12,14,16,0.97);
+    background: rgb(var(--bg-ch) / 0.97);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
     overflow: visible;
@@ -218,9 +217,9 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(12,14,16,0.55) 0%,
-    rgba(12,14,16,0.72) 60%,
-    rgba(12,14,16,0.92) 100%
+    rgb(var(--bg-ch) / 0.55) 0%,
+    rgb(var(--bg-ch) / 0.72) 60%,
+    rgb(var(--bg-ch) / 0.92) 100%
   );
 }
 
@@ -256,18 +255,18 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  border: 1px solid var(--wave);
+  border: 1px solid var(--accent);
   padding: 7px 16px;
   font-family: var(--f-accent);
   font-size: 15px;
-  color: var(--wave);
+  color: var(--accent);
 }
 
 .hero-badge .dot {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: var(--wave);
+  background: var(--accent);
   flex-shrink: 0;
 }
 
@@ -302,7 +301,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
 /* ── About / Bio ── */
 #bio {
   padding: 0 20px 28px;
-  background: rgba(12, 14, 16, 0.55);
+  background: rgb(var(--bg-ch) / 0.55);
 }
 
 #bio .sec-head {
@@ -327,7 +326,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
 .bio-quote {
   font-family: var(--f-accent);
   font-size: clamp(11px, 3.9vw, 17px);
-  color: var(--wave);
+  color: var(--accent);
   margin: 24px 0 12px;
   display: block;
   white-space: nowrap;
@@ -365,8 +364,8 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid var(--border-hi);
-  background-color: var(--surface-hi);
+  border: 1px solid var(--border);
+  background-color: var(--surface);
   background-size: cover;
   background-position: center;
   flex-shrink: 0;
@@ -398,7 +397,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
 /* ── Platform Links ── */
 #links {
   border-top: 1px solid var(--border);
-  background: rgba(12, 14, 16, 0.55);
+  background: rgb(var(--bg-ch) / 0.55);
 }
 
 .link-row {
@@ -450,7 +449,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
 
 .link-arr {
   font-size: 14px;
-  color: var(--wave);
+  color: var(--accent);
   margin-right: 30px;
   flex-shrink: 0;
 }
@@ -458,7 +457,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
 /* ── Announcements ── */
 #announcements {
   border-top: 1px solid var(--border);
-  background: rgba(12, 14, 16, 0.55);
+  background: rgb(var(--bg-ch) / 0.55);
 }
 
 .ann-item {
@@ -482,7 +481,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
   font-size: 8px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--wave);
+  color: var(--accent);
   user-select: none;
   -webkit-user-select: none;
 }
@@ -510,7 +509,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
   -webkit-user-select: none;
 }
 
-.tag-show, .tag-news { color: var(--wave); }
+.tag-show, .tag-news { color: var(--accent); }
 
 .ann-title {
   font-family: var(--f-title);
@@ -533,7 +532,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
 }
 
 .ann-desc a {
-  color: var(--wave);
+  color: var(--accent);
   text-decoration: underline;
 }
 
@@ -543,7 +542,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
 }
 
 /* ── Gallery ── */
-#photos { border-top: 1px solid var(--border); background: rgba(12, 14, 16, 0.55); }
+#photos { border-top: 1px solid var(--border); background: rgb(var(--bg-ch) / 0.55); }
 
 .gallery {
   display: grid;
@@ -567,7 +566,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-
 /* ── Footer ── */
 footer {
   padding: 20px;
-  background: rgba(12, 14, 16, 0.55);
+  background: rgb(var(--bg-ch) / 0.55);
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -630,14 +629,14 @@ footer {
 /* Inline script in layout.tsx adds js-ready to <html>, hiding content for timed reveal */
 #main-content {
   opacity: 1;
-  background: rgba(12, 14, 16, 0.28);
+  background: rgb(var(--bg-ch) / 0.28);
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
 }
 
 @media (max-width: 480px) {
   #main-content {
-    background: rgba(12, 14, 16, 0.2);
+    background: rgb(var(--bg-ch) / 0.2);
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
   }
@@ -676,7 +675,7 @@ footer {
   .hero-title { font-size: 96px; }
   .site-wrap  {
     max-width: 680px;
-    border-left-color:  var(--border-hi);
-    border-right-color: var(--border-hi);
+    border-left-color:  var(--border);
+    border-right-color: var(--border);
   }
 }

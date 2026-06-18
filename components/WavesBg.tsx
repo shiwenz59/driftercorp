@@ -47,7 +47,6 @@ seedNoise(Math.random())
 // ── Config ────────────────────────────────────────────────────────────────────
 
 const cfg = {
-  lineColor:  'rgba(39, 103, 146, 0.65)',
   waveSpeedX: 0.0125,
   waveSpeedY: 0.005,
   waveAmpX:   32,
@@ -67,6 +66,14 @@ export default function WavesBg() {
     if (!canvasRef.current) return
     const canvas: HTMLCanvasElement = canvasRef.current
     const ctx = canvas.getContext('2d')!
+
+    // Derive wave line color from --accent CSS variable so canvas stays in sync
+    const accentHex = getComputedStyle(document.documentElement)
+      .getPropertyValue('--accent').trim()
+    const r = parseInt(accentHex.slice(1, 3), 16)
+    const g = parseInt(accentHex.slice(3, 5), 16)
+    const b = parseInt(accentHex.slice(5, 7), 16)
+    const lineColor = `rgba(${r},${g},${b},0.65)`
 
     let bounding = { width: 0, height: 0 }
     let lines: Point[][] = []
@@ -112,7 +119,7 @@ export default function WavesBg() {
       ctx.clearRect(0, 0, bounding.width, bounding.height)
       ctx.beginPath()
       ctx.lineWidth   = 3
-      ctx.strokeStyle = cfg.lineColor
+      ctx.strokeStyle = lineColor
       for (const points of lines) {
         ctx.moveTo(points[0].x + points[0].wave.x, points[0].y + points[0].wave.y)
         for (let j = 1; j < points.length; j++) {
