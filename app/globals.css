@@ -7,7 +7,7 @@
 :root {
   --bg:        #0c0e10;
   --bg-ch:     12 14 16;   /* RGB channels — used for opacity variants via rgb(var(--bg-ch) / X) */
-  --surface:   #111518;
+  --surface:   rgb(var(--bg-ch) / 0.85);
   --border:    #1e2428;
   --text:      #dde6ea;
   --text-mute: #8aacb8;
@@ -107,7 +107,7 @@ nav {
   padding-left: var(--sp-md);
   padding-right: var(--sp-md);
   gap: var(--sp-sm);
-  background: rgb(var(--bg-ch) / 0.93);
+  background: var(--surface);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
   overflow: visible;
@@ -279,6 +279,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-5px) rotate(-
   font-family: var(--f-accent);
   font-size: var(--fs-md);
   color: var(--accent);
+  background: var(--surface);
 }
 
 .hero-badge .dot {
@@ -348,8 +349,6 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-5px) rotate(-
   color: var(--accent);
   margin: var(--sp-lg) 0 var(--sp-sm);
   display: block;
-  white-space: nowrap;
-  overflow: hidden;
   transform: rotate(-1.5deg);
   transform-origin: left center;
   padding-left: var(--sp-xs);
@@ -493,7 +492,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-5px) rotate(-
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: var(--sp-md) var(--sp-sm);
+  padding: 0 var(--sp-sm);
   gap: var(--sp-xs);
 }
 
@@ -502,7 +501,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-5px) rotate(-
   font-size: var(--fs-xs);
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--text);
   user-select: none;
   -webkit-user-select: none;
 }
@@ -539,7 +538,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-5px) rotate(-
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--text);
-  margin-bottom: var(--sp-xs);
+  margin-bottom: var(--sp-sm);
   line-height: 1.3;
   user-select: none;
   -webkit-user-select: none;

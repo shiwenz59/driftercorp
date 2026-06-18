@@ -95,7 +95,7 @@ export default function Page() {
 
             <div className="ann-item ann-item--past reveal">
               <div className="ann-date">
-                <span className="month">April</span>
+                <span className="month">Apr</span>
                 <span className="day">05</span>
               </div>
               <div className="ann-body">
