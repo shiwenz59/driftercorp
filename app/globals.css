@@ -689,3 +689,104 @@ footer {
     border-right-color: var(--border);
   }
 }
+
+/* ── Newsletter banner ── */
+.nl-banner {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 48px);
+  max-width: 400px;
+  background: #161b1f;
+  border: 1px solid var(--border);
+  padding: var(--sp-lg) var(--sp-lg) var(--sp-md);
+  z-index: 200;
+  animation: nl-slide-up 0.35s ease both;
+}
+
+@keyframes nl-slide-up {
+  from { opacity: 0; transform: translateX(-50%) translateY(16px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+.nl-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: none;
+  border: none;
+  color: var(--text-mute);
+  font-size: 20px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+}
+.nl-close:hover { color: var(--text); }
+
+.nl-heading {
+  font-family: var(--font-josefin), sans-serif;
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin: 0 0 4px;
+}
+
+.nl-sub {
+  font-family: var(--font-josefin), sans-serif;
+  font-size: var(--fs-xs);
+  color: var(--text-mute);
+  margin: 0 0 var(--sp-md);
+}
+
+.nl-form {
+  display: flex;
+  gap: 8px;
+}
+
+.nl-input {
+  flex: 1;
+  background: rgb(var(--bg-ch) / 0.6);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: var(--font-josefin), sans-serif;
+  font-size: var(--fs-xs);
+  padding: 8px 10px;
+  outline: none;
+}
+.nl-input::placeholder { color: var(--text-mute); }
+.nl-input:focus { border-color: var(--text); }
+
+.nl-submit {
+  background: var(--accent);
+  border: none;
+  color: var(--text);
+  font-family: var(--font-josefin), sans-serif;
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 8px 14px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.nl-submit:hover:not(:disabled) { opacity: 0.85; }
+.nl-submit:disabled { opacity: 0.5; cursor: default; }
+
+.nl-error {
+  font-family: var(--font-josefin), sans-serif;
+  font-size: var(--fs-xs);
+  color: #e07070;
+  margin: 8px 0 0;
+}
+
+.nl-success {
+  font-family: var(--font-josefin), sans-serif;
+  font-size: var(--fs-sm);
+  color: var(--text);
+  margin: 0;
+  text-align: center;
+  padding: var(--sp-sm) 0;
+}
