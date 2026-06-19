@@ -3,6 +3,7 @@ import Nav from '@/components/Nav'
 import MainContent from '@/components/MainContent'
 import BioText from '@/components/BioText'
 import PlatformLinks from '@/components/PlatformLinks'
+import FooterSubscribeTrigger from '@/components/FooterSubscribeTrigger'
 
 const members = [
   { name: 'Harry Zhao',   role: ['Producer /', 'Guitar'],           img: '/harry.jpg'  },
@@ -120,7 +121,8 @@ export default function Page() {
 
           {/* ── Footer ── */}
           <footer>
-            <span className="ft-copy">&copy; Drifter Corp. All rights reserved.</span>
+            <FooterSubscribeTrigger />
+            <span className="ft-brand">Drifter Corp.</span>
           </footer>
 
         </MainContent>

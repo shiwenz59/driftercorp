@@ -24,6 +24,18 @@ export default function NewsletterBanner() {
     return () => clearTimeout(timer)
   }, [])
 
+  useEffect(() => {
+    function handleOpen() {
+      localStorage.removeItem(KEY_DISMISSED)
+      setStatus('idle')
+      setEmail('')
+      setErrorMsg('')
+      setVisible(true)
+    }
+    window.addEventListener('dc:show-newsletter', handleOpen)
+    return () => window.removeEventListener('dc:show-newsletter', handleOpen)
+  }, [])
+
   function dismiss() {
     localStorage.setItem(KEY_DISMISSED, String(Date.now()))
     setVisible(false)

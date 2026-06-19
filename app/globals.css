@@ -581,16 +581,28 @@ footer {
   background: rgb(var(--bg-ch) / 0.55);
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   border-top: 1px solid var(--border);
 }
 
-.ft-copy {
+.ft-brand {
   font-family: var(--f-body);
   font-size: var(--fs-xs);
   letter-spacing: 0.1em;
   color: var(--text-mute);
 }
+
+.ft-subscribe {
+  background: none;
+  border: none;
+  font-family: var(--f-body);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.1em;
+  color: var(--text-mute);
+  cursor: pointer;
+  padding: 0;
+}
+.ft-subscribe:hover { color: var(--text); }
 
 /* ════════════════════════════════════════
    ANIMATIONS
