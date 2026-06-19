@@ -1,7 +1,16 @@
 'use client'
 import { useState, useEffect } from 'react'
 
-const STORAGE_KEY = 'dc_newsletter_dismissed'
+const KEY_DISMISSED  = 'dc_newsletter_dismissed_at'  // timestamp — expires after 7 days
+const KEY_SUBSCRIBED = 'dc_newsletter_subscribed'     // permanent
+const WEEK_MS = 7 * 24 * 60 * 60 * 1000
+
+function shouldShow() {
+  if (localStorage.getItem(KEY_SUBSCRIBED)) return false
+  const dismissedAt = localStorage.getItem(KEY_DISMISSED)
+  if (!dismissedAt) return true
+  return Date.now() - Number(dismissedAt) > WEEK_MS
+}
 
 export default function NewsletterBanner() {
   const [visible, setVisible] = useState(false)
@@ -10,13 +19,13 @@ export default function NewsletterBanner() {
   const [errorMsg, setErrorMsg] = useState('')
 
   useEffect(() => {
-    if (localStorage.getItem(STORAGE_KEY)) return
+    if (!shouldShow()) return
     const timer = setTimeout(() => setVisible(true), 3000)
     return () => clearTimeout(timer)
   }, [])
 
   function dismiss() {
-    localStorage.setItem(STORAGE_KEY, '1')
+    localStorage.setItem(KEY_DISMISSED, String(Date.now()))
     setVisible(false)
   }
 
@@ -36,7 +45,7 @@ export default function NewsletterBanner() {
         setErrorMsg(data.error ?? 'Something went wrong.')
       } else {
         setStatus('success')
-        localStorage.setItem(STORAGE_KEY, '1')
+        localStorage.setItem(KEY_SUBSCRIBED, '1')
         setTimeout(() => setVisible(false), 2500)
       }
     } catch {
