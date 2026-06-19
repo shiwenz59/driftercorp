@@ -7,7 +7,7 @@ import FooterSubscribeTrigger from '@/components/FooterSubscribeTrigger'
 
 const members = [
   { name: 'Harry Zhao',   role: ['Producer /', 'Guitar'],           img: '/harry.jpg'  },
-  { name: 'Jeffrey Zhao', role: ['Guitar /',   'Songwriter'],       img: '/jeff.jpg'   },
+  { name: 'Jeffery Zhao', role: ['Guitar /',   'Songwriter'],       img: '/jeff.jpg'   },
   { name: 'Jerry Huang',  role: ['Bass /',     'Manager'],          img: '/jerry.jpg'  },
   { name: 'Shiwen Zhu',   role: ['Vocals/Keys/',      'Songwriter'],         img: '/shiwen.jpg' },
 ]
