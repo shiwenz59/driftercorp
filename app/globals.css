@@ -693,12 +693,12 @@ footer {
 /* ── Newsletter banner ── */
 .nl-banner {
   position: fixed;
-  bottom: 24px;
+  bottom: var(--sp-lg);
   left: 50%;
   transform: translateX(-50%);
-  width: calc(100% - 48px);
+  width: calc(100% - var(--sp-lg) * 2);
   max-width: 400px;
-  background: #161b1f;
+  background: var(--bg);
   border: 1px solid var(--border);
   padding: var(--sp-lg) var(--sp-lg) var(--sp-md);
   z-index: 200;
@@ -712,12 +712,13 @@ footer {
 
 .nl-close {
   position: absolute;
-  top: 10px;
-  right: 14px;
+  top: var(--sp-sm);
+  right: var(--sp-md);
   background: none;
   border: none;
   color: var(--text-mute);
-  font-size: 20px;
+  font-family: var(--f-body);
+  font-size: var(--fs-lg);
   cursor: pointer;
   line-height: 1;
   padding: 0;
@@ -725,17 +726,17 @@ footer {
 .nl-close:hover { color: var(--text); }
 
 .nl-heading {
-  font-family: var(--font-josefin), sans-serif;
+  font-family: var(--f-title);
   font-size: var(--fs-sm);
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--text);
-  margin: 0 0 4px;
+  margin: 0 0 var(--sp-xs);
 }
 
 .nl-sub {
-  font-family: var(--font-josefin), sans-serif;
+  font-family: var(--f-body);
   font-size: var(--fs-xs);
   color: var(--text-mute);
   margin: 0 0 var(--sp-md);
@@ -743,7 +744,7 @@ footer {
 
 .nl-form {
   display: flex;
-  gap: 8px;
+  gap: var(--sp-sm);
 }
 
 .nl-input {
@@ -751,9 +752,9 @@ footer {
   background: rgb(var(--bg-ch) / 0.6);
   border: 1px solid var(--border);
   color: var(--text);
-  font-family: var(--font-josefin), sans-serif;
+  font-family: var(--f-body);
   font-size: var(--fs-xs);
-  padding: 8px 10px;
+  padding: var(--sp-xs) var(--sp-sm);
   outline: none;
 }
 .nl-input::placeholder { color: var(--text-mute); }
@@ -763,12 +764,12 @@ footer {
   background: var(--accent);
   border: none;
   color: var(--text);
-  font-family: var(--font-josefin), sans-serif;
+  font-family: var(--f-body);
   font-size: var(--fs-xs);
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  padding: 8px 14px;
+  padding: var(--sp-xs) var(--sp-md);
   cursor: pointer;
   white-space: nowrap;
 }
@@ -776,14 +777,14 @@ footer {
 .nl-submit:disabled { opacity: 0.5; cursor: default; }
 
 .nl-error {
-  font-family: var(--font-josefin), sans-serif;
+  font-family: var(--f-body);
   font-size: var(--fs-xs);
   color: #e07070;
-  margin: 8px 0 0;
+  margin: var(--sp-sm) 0 0;
 }
 
 .nl-success {
-  font-family: var(--font-josefin), sans-serif;
+  font-family: var(--f-body);
   font-size: var(--fs-sm);
   color: var(--text);
   margin: 0;
