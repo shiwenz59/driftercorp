@@ -1,6 +1,6 @@
 import WavesBg from '@/components/WavesBg'
 import PlatformLinks from '@/components/PlatformLinks'
-import { platforms } from '@/lib/platforms'
+import { musicPlatforms } from '@/lib/platforms'
 
 export const metadata = { title: 'Drifter Corp. — Links' }
 
@@ -18,7 +18,7 @@ export default function LinksPage() {
           <div className="sec-head">
             <h2>Platforms</h2>
           </div>
-          <PlatformLinks platforms={platforms} />
+          <PlatformLinks platforms={musicPlatforms} />
         </section>
 
         <footer>

@@ -4,7 +4,7 @@ import MainContent from '@/components/MainContent'
 import BioText from '@/components/BioText'
 import PlatformLinks from '@/components/PlatformLinks'
 import FooterSubscribeTrigger from '@/components/FooterSubscribeTrigger'
-import { platforms } from '@/lib/platforms'
+import { musicPlatforms, socialPlatforms } from '@/lib/platforms'
 
 const members = [
   { name: 'Harry Zhao',   role: ['Producer /', 'Guitar'],           img: '/harry.jpg'  },
@@ -60,10 +60,16 @@ export default function Page() {
             </div>
           </section>
 
-          {/* ── Platforms ── */}
+          {/* ── Music Platforms ── */}
           <section id="links">
-            <div className="sec-head reveal"><h2>Platforms</h2></div>
-            <PlatformLinks platforms={platforms} />
+            <div className="sec-head reveal"><h2>Music</h2></div>
+            <PlatformLinks platforms={musicPlatforms} />
+          </section>
+
+          {/* ── Social Media ── */}
+          <section id="social">
+            <div className="sec-head reveal"><h2>Social</h2></div>
+            <PlatformLinks platforms={socialPlatforms} />
           </section>
 
           {/* ── Calendar ── */}
