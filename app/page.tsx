@@ -4,19 +4,13 @@ import MainContent from '@/components/MainContent'
 import BioText from '@/components/BioText'
 import PlatformLinks from '@/components/PlatformLinks'
 import FooterSubscribeTrigger from '@/components/FooterSubscribeTrigger'
+import { platforms } from '@/lib/platforms'
 
 const members = [
   { name: 'Harry Zhao',   role: ['Producer /', 'Guitar'],           img: '/harry.jpg'  },
   { name: 'Jeffery Zhao', role: ['Guitar /',   'Songwriter'],       img: '/jeff.jpg'   },
   { name: 'Jerry Huang',  role: ['Bass /',     'Manager'],          img: '/jerry.jpg'  },
   { name: 'Shiwen Zhu',   role: ['Vocals/Keys/',      'Songwriter'],         img: '/shiwen.jpg' },
-]
-
-const platforms = [
-  { num: '01', name: 'Samply',    handle: 'Demo Listening',        href: 'https://samply.app/p/Wbah11phHCbJ0mUhMBKW?si=r16IHHRhZFb6pZAt6edHKcE9MpF3' },
-  { num: '02', name: 'Instagram', handle: '@drifter_corp',         href: 'https://www.instagram.com/drifter_corp/' },
-  { num: '03', name: 'RedNote',   handle: '小红书 · @Drifter Corp.', href: 'https://xhslink.com/m/O76ZBqVad0' },
-  { num: '04', name: 'TikTok',    handle: '@drifter_corp',         href: 'https://www.tiktok.com/@drifter_corp' },
 ]
 
 export default function Page() {
