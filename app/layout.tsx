@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import { Leckerli_One, Josefin_Sans } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
+import Script from 'next/script'
 import NewsletterBanner from '@/components/NewsletterBanner'
 import './globals.css'
 
@@ -39,7 +39,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script dangerouslySetInnerHTML={{ __html: `document.documentElement.classList.add('js-ready');if('scrollRestoration'in history)history.scrollRestoration='manual';` }} />
         {children}
         <NewsletterBanner />
-        <Analytics />
+        <Script
+          defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id="4f49e787-ba24-458e-a54a-dc34bc6fa8f0"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   )

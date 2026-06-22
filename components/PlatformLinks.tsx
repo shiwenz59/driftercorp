@@ -1,5 +1,8 @@
 'use client'
-import { track } from '@vercel/analytics'
+
+declare global {
+  interface Window { umami?: { track: (event: string, data?: Record<string, unknown>) => void } }
+}
 
 type Platform = {
   num: string
@@ -18,7 +21,7 @@ export default function PlatformLinks({ platforms }: { platforms: Platform[] }) 
           target="_blank"
           rel="noopener noreferrer"
           className="link-row"
-          onClick={() => track('platform_click', { name: p.name })}
+          onClick={() => window.umami?.track('platform_click', { name: p.name })}
         >
           <span className="link-num">{p.num}</span>
           <div className="link-body">
