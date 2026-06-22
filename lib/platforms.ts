@@ -5,5 +5,6 @@ export const platforms = [
   { num: '04', name: 'RedNote',     handle: '小红书 · @Drifter Corp.', href: 'https://xhslink.com/m/O76ZBqVad0' },
   { num: '05', name: 'TikTok',      handle: '@drifter_corp',        href: 'https://www.tiktok.com/@drifter_corp' },
   { num: '06', name: 'NetEase Music', handle: '网易云音乐 · Drifter Corp.', href: 'https://163cn.tv/9ynREiF' },
-  { num: '07', name: 'QQ Music',    handle: 'QQ音乐 · Drifter Corp.',  href: 'https://c6.y.qq.com/base/fcgi-bin/u?__=P1csc1fl7Rw0' },
+  { num: '07', name: 'QQ Music',     handle: 'QQ音乐 · Drifter Corp.',   href: 'https://c6.y.qq.com/base/fcgi-bin/u?__=P1csc1fl7Rw0' },
+  { num: '08', name: 'Tidal',        handle: 'Drifter Corp.',            href: 'https://tidal.com/artist/81416212/u' },
 ]
