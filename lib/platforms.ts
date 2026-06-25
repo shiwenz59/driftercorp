@@ -8,6 +8,6 @@ export const musicPlatforms = [
 
 export const socialPlatforms = [
   { num: '01', name: 'Instagram', handle: '@drifter_corp',          href: 'https://www.instagram.com/drifter_corp/' },
-  { num: '02', name: 'RedNote',   handle: '小红书 · @Drifter Corp.', href: 'https://xhslink.com/m/O76ZBqVad0' },
+  { num: '02', name: 'RedNote',   handle: '小红书 · @Drifter Corp.', href: 'https://xhslink.com/m/6b2FtigvZf3' },
   { num: '03', name: 'TikTok',    handle: '@drifter_corp',          href: 'https://www.tiktok.com/@drifter_corp' },
 ]
