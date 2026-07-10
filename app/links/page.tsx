@@ -23,7 +23,7 @@ export default function LinksPage() {
 
         <section id="release">
           <div className="release-media">
-            <img className="release-cover" src="/canopy_eden_release.png" alt="Canopy Eden" />
+            <img className="release-cover" src="/canopy_eden_release.webp" alt="Canopy Eden" />
           </div>
           <div className="release-info">
             <span className="release-label">Single</span>
