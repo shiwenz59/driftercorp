@@ -284,6 +284,94 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-5px) rotate(-
   flex-shrink: 0;
 }
 
+/* ── Release ── */
+#release {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: rgb(var(--bg-ch) / 0.55);
+  border-bottom: 1px solid var(--border);
+}
+
+.release-media {
+  display: flex;
+  align-items: center;
+  padding: var(--sp-md);
+}
+
+.release-cover {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.release-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--sp-sm);
+  padding: var(--sp-md);
+}
+
+.release-label {
+  font-family: var(--f-title);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  line-height: 1;
+}
+
+.release-title {
+  display: inline-block;
+  font-family: var(--f-title);
+  font-size: clamp(22px, 9vw, 34px);
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--text);
+  line-height: 1;
+}
+
+.release-status {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-sm);
+  font-family: var(--f-title);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: var(--sp-xs) var(--sp-sm);
+}
+
+.release-status .dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+  animation: rec-blink 1.4s ease-in-out infinite;
+}
+
+.release-badges {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-sm);
+  width: 100%;
+  margin-top: var(--sp-xs);
+}
+
+.release-badges img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 /* ── Section header ── */
 .sec-head {
   display: flex;
@@ -428,6 +516,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-5px) rotate(-
 }
 
 #links .sec-head + .link-row,
+#social .sec-head + .link-row,
 #announcements .sec-head + .ann-item { border-top: none; }
 
 .link-num {
@@ -466,6 +555,12 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-5px) rotate(-
   color: var(--accent);
   margin-right: var(--sp-md);
   flex-shrink: 0;
+}
+
+/* ── Social ── */
+#social {
+  border-top: 1px solid var(--border);
+  background: rgb(var(--bg-ch) / 0.55);
 }
 
 /* ── Announcements ── */
