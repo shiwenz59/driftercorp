@@ -28,7 +28,7 @@ export default function LinksPage() {
           <div className="release-info">
             <span className="release-label">Single</span>
             <span className="release-title">Canopy Eden</span>
-            <span className="release-status"><span className="dot" />Now Out</span>
+            <span className="hero-badge"><span className="dot" />Now Out</span>
 
             <div className="release-badges">
               {releaseBadges.map(b => (

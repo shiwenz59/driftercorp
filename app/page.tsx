@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import WavesBg from '@/components/WavesBg'
 import Nav from '@/components/Nav'
 import MainContent from '@/components/MainContent'
@@ -28,10 +29,10 @@ export default function Page() {
           <div className="hero-content">
             <p className="hero-eyebrow">Independent &middot; New York &middot; Est. 2025</p>
             <h1 className="hero-title">Drifter<br />Corp.</h1>
-            <div className="hero-badge">
+            <Link href="/links" className="hero-badge">
               <span className="dot" />
-              Ebbs N&rsquo; Flows &mdash; Coming Soon
-            </div>
+              Canopy Eden &mdash; NOW OUT!
+            </Link>
           </div>
         </section>
 

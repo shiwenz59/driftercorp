@@ -33,7 +33,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${leckerliOne.variable} ${josefinSans.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${leckerliOne.variable} ${josefinSans.variable}`} suppressHydrationWarning data-scroll-behavior="smooth">
       <body>
         {/* Runs before React hydration: enables timed reveal animation and preserves scroll */}
         <script dangerouslySetInnerHTML={{ __html: `document.documentElement.classList.add('js-ready');if('scrollRestoration'in history)history.scrollRestoration='manual';` }} />
