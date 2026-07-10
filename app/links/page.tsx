@@ -5,10 +5,10 @@ import { musicPlatforms, socialPlatforms } from '@/lib/platforms'
 export const metadata = { title: 'Drifter Corp. — Links' }
 
 const releaseBadges = [
-  { name: 'Apple Music', img: '/1_apple_badge.png',   href: 'https://music.apple.com/us/artist/drifter-corp/6782407914' },
-  { name: 'Spotify',     img: '/2_spotify_badge.png', href: 'https://open.spotify.com/artist/6WbDMwGpRtZdXUKEBrYhRR?si=-entC25UQVWl_1GNWj8XoA' },
-  { name: 'YouTube Music', img: '/3_youtube_badge.png', href: 'https://music.youtube.com/@drifter_corp?si=BmrA2WApt4ulxWmA' },
-  { name: 'Tidal',       img: '/4_tidal_badge.png',   href: 'https://tidal.com/artist/81416212/u' },
+  { name: 'Apple Music', img: '/1_apple_badge.png',   href: 'https://music.apple.com/us/album/canopy-eden-single/6782598395' },
+  { name: 'Spotify',     img: '/2_spotify_badge.png', href: 'https://open.spotify.com/album/5ILr8pXDPMh9eEC6hwgZPf?si=IE3_LJEdTOOenxn_yQocMA' },
+  { name: 'YouTube Music', img: '/3_youtube_badge.png', href: 'https://music.youtube.com/playlist?list=OLAK5uy_l7Ree5foDmls5PNLgl6P638lpemxUmG0Q&si=e92DV4eNFPD1lFpb' },
+  { name: 'Tidal',       img: '/4_tidal_badge.png',   href: 'https://tidal.com/album/535259603/u' },
 ]
 
 export default function LinksPage() {

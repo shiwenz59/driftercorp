@@ -362,7 +362,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-5px) rotate(-
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--sp-sm);
-  width: 100%;
+  width: 82%;
   margin-top: var(--sp-xs);
 }
 
