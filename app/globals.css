@@ -372,6 +372,16 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-5px) rotate(-
   height: auto;
 }
 
+@media (max-width: 480px) {
+  #release {
+    grid-template-columns: 1fr;
+  }
+
+  .release-media {
+    padding-bottom: 0;
+  }
+}
+
 /* ── Section header ── */
 .sec-head {
   display: flex;
