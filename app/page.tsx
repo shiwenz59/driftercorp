@@ -31,7 +31,7 @@ export default function Page() {
             <h1 className="hero-title">Drifter<br />Corp.</h1>
             <Link href="/links" className="hero-badge">
               <span className="dot" />
-              Canopy Eden &mdash; NOW OUT!
+              Canopy Eden &mdash; OUT NOW!
             </Link>
           </div>
         </section>
