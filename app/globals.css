@@ -639,24 +639,47 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-5px) rotate(-
 #photos { border-top: 1px solid var(--border); background: rgb(var(--bg-ch) / 0.55); }
 
 .gallery {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   gap: var(--sp-xs);
   background: var(--bg);
+  overflow: hidden;
 }
 
-.g-cell {
+.g-row { overflow: hidden; }
+
+.g-track {
+  display: flex;
+  gap: var(--sp-xs);
+  width: max-content;
+  animation: g-scroll-left 80s linear infinite;
+}
+
+.g-track--right { animation-name: g-scroll-right; }
+
+.g-tile {
+  flex: 0 0 auto;
   background: var(--surface);
-  position: relative;
-  overflow: hidden;
-  aspect-ratio: 1;
   background-size: cover;
   background-position: center;
+  height: 220px;
 }
 
-.g-cell.wide {
-  grid-column: span 2;
-  aspect-ratio: 16 / 9;
+.g-tile--wide   { aspect-ratio: 16 / 9; }
+.g-tile--square { aspect-ratio: 1; }
+
+@keyframes g-scroll-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes g-scroll-right {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+@media (max-width: 480px) {
+  .g-tile { height: 140px; }
 }
 
 /* ── Footer ── */

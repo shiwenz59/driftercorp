@@ -14,6 +14,12 @@ const members = [
   { name: 'Shiwen Zhu',   role: ['Vocals/Keys/',      'Songwriter'],         img: '/shiwen.jpg' },
 ]
 
+const galleryRows: { images: string[]; variant: 'wide' | 'square'; direction: 'left' | 'right' }[] = [
+  { images: ['/gallery/lg1.jpg', '/gallery/lg2.jpg', '/gallery/lg3.jpg', '/gallery/lg4.jpg'], variant: 'wide', direction: 'left' },
+  { images: ['/gallery/sq1.jpg', '/gallery/sq2.jpg', '/gallery/sq3.jpg', '/gallery/sq4.jpg', '/gallery/sq5.jpg', '/gallery/sq6.jpg'], variant: 'square', direction: 'right' },
+  { images: ['/gallery/lg5.jpg', '/gallery/lg6.jpg', '/gallery/lg7.jpg', '/gallery/lg8.jpg'], variant: 'wide', direction: 'left' },
+]
+
 export default function Page() {
   return (
     <>
@@ -113,10 +119,19 @@ export default function Page() {
           <section id="photos">
             <div className="sec-head reveal"><h2>Gallery</h2></div>
             <div className="gallery">
-              <div className="g-cell wide" style={{ backgroundImage: "url('/photo1.jpg')" }} />
-              <div className="g-cell"      style={{ backgroundImage: "url('/photo2.jpg')" }} />
-              <div className="g-cell"      style={{ backgroundImage: "url('/photo3.jpg')" }} />
-              <div className="g-cell wide" style={{ backgroundImage: "url('/photo4.jpg')" }} />
+              {galleryRows.map((row, i) => (
+                <div className="g-row" key={i}>
+                  <div className={`g-track g-track--${row.direction}`}>
+                    {[...row.images, ...row.images].map((src, j) => (
+                      <div
+                        key={j}
+                        className={`g-tile g-tile--${row.variant}`}
+                        style={{ backgroundImage: `url('${src}')` }}
+                      />
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
           </section>
 
