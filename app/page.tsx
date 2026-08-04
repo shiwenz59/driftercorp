@@ -83,7 +83,12 @@ export default function Page() {
           <section id="announcements">
             <div className="sec-head reveal"><h2>Calendar</h2></div>
 
-            <div className="ann-item ann-item--past reveal">
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLScs3TZ6ZxWA7l-RvgtfQZhmn81gNiqZZZZ6KdPJdkAt2TNaZQ/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ann-item ann-item--past reveal"
+            >
               <div className="ann-date">
                 <span className="month">Apr</span>
                 <span className="day">05</span>
@@ -91,14 +96,17 @@ export default function Page() {
               <div className="ann-body">
                 <span className="ann-tag tag-show">Live Show</span>
                 <div className="ann-title">Live at Mercury Lounge</div>
-                <div className="ann-desc">
-                  New York &middot; 8PM &middot;{' '}
-                  <a href="https://docs.google.com/forms/d/e/1FAIpQLScs3TZ6ZxWA7l-RvgtfQZhmn81gNiqZZZZ6KdPJdkAt2TNaZQ/viewform" target="_blank" rel="noopener noreferrer">Register</a>
-                </div>
+                <div className="ann-desc">New York &middot; 8PM &middot; Register</div>
               </div>
-            </div>
+              <span className="link-arr">&#8594;</span>
+            </a>
 
-            <div className="ann-item ann-item--past reveal">
+            <a
+              href="https://partiful.com/e/O4F2eOzlIz8aVC4YGdDz?c=9TKsns9N"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ann-item ann-item--past reveal"
+            >
               <div className="ann-date">
                 <span className="month">May</span>
                 <span className="day">03</span>
@@ -108,11 +116,11 @@ export default function Page() {
                 <div className="ann-title">Ebbs N&rsquo; Flows &mdash; Listening Party</div>
                 <div className="ann-desc">
                   Pre-launch listening event.<br />
-                  New York &middot; Saturday &middot; 7&ndash;9PM &middot;{' '}
-                  <a href="https://partiful.com/e/O4F2eOzlIz8aVC4YGdDz?c=9TKsns9N" target="_blank" rel="noopener noreferrer">Register</a>
+                  New York &middot; Saturday &middot; 7&ndash;9PM &middot; Register
                 </div>
               </div>
-            </div>
+              <span className="link-arr">&#8594;</span>
+            </a>
           </section>
 
           {/* ── Gallery ── */}
