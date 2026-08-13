@@ -37,7 +37,7 @@ export default function Page() {
             <h1 className="hero-title">Drifter<br />Corp.</h1>
             <Link href="/links" className="hero-badge">
               <span className="dot" />
-              Ebbs N&rsquo; Flows &mdash; PRE-ORDER NOW!
+              <span>Ebbs N&rsquo; Flows<br />PRE-ORDER NOW!</span>
             </Link>
           </div>
         </section>

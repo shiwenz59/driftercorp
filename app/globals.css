@@ -274,6 +274,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-5px) rotate(-
   padding: var(--sp-xs) var(--sp-md);
   font-family: var(--f-accent);
   font-size: var(--fs-md);
+  line-height: 1.35;
   color: var(--accent);
   background: var(--surface);
   text-decoration: none;
