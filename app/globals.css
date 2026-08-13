@@ -289,6 +289,13 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-5px) rotate(-
   flex-shrink: 0;
 }
 
+@media (max-width: 480px) {
+  .hero-badge {
+    padding: 6px var(--sp-sm);
+    font-size: var(--fs-sm);
+  }
+}
+
 /* ── Release ── */
 .release {
   display: grid;
