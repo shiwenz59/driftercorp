@@ -289,7 +289,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-5px) rotate(-
 }
 
 /* ── Release ── */
-#release {
+.release {
   display: grid;
   grid-template-columns: 1fr 1fr;
   background: rgb(var(--bg-ch) / 0.55);
@@ -354,7 +354,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-5px) rotate(-
 }
 
 @media (max-width: 480px) {
-  #release {
+  .release {
     grid-template-columns: 1fr;
   }
 
