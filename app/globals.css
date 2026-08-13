@@ -353,6 +353,13 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-5px) rotate(-
   height: auto;
 }
 
+.release-note {
+  font-family: var(--f-title);
+  font-size: var(--fs-sm);
+  color: var(--text-mute);
+  margin-top: var(--sp-xs);
+}
+
 @media (max-width: 480px) {
   .release {
     grid-template-columns: 1fr;

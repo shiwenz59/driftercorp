@@ -6,10 +6,8 @@ import { musicPlatforms, socialPlatforms } from '@/lib/platforms'
 export const metadata = { title: 'Drifter Corp. — Links' }
 
 const nextReleaseBadges = [
-  { name: 'Apple Music', img: '/1_apple_badge.png',   href: '#' },
-  { name: 'Spotify',     img: '/2_spotify_badge.png', href: '#' },
-  { name: 'YouTube Music', img: '/3_youtube_badge.png', href: '#' },
-  { name: 'Tidal',       img: '/4_tidal_badge.png',   href: '#' },
+  { name: 'Apple Music', img: '/1_apple_badge.png',   href: 'https://distrokid.com/hyperfollow/driftercorp/ebbs-n-flows' },
+  { name: 'Spotify',     img: '/2_spotify_badge.png', href: 'https://distrokid.com/hyperfollow/driftercorp/ebbs-n-flows' },
 ]
 
 export default function LinksPage() {
@@ -27,8 +25,9 @@ export default function LinksPage() {
           coverAlt="Ebbs N' Flows"
           label="Album"
           title="Ebbs N' Flows"
-          statusLabel="UPCOMING"
+          statusLabel="PRE-ORDER NOW"
           badges={nextReleaseBadges}
+          note="More pre-order options coming soon."
         />
 
         {/* Canopy Eden release hidden for now — restore badges array above to bring back.

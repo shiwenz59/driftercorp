@@ -11,9 +11,10 @@ type ReleaseSectionProps = {
   title: string
   statusLabel: string
   badges: ReleaseBadge[]
+  note?: string
 }
 
-export default function ReleaseSection({ cover, coverAlt, label, title, statusLabel, badges }: ReleaseSectionProps) {
+export default function ReleaseSection({ cover, coverAlt, label, title, statusLabel, badges, note }: ReleaseSectionProps) {
   return (
     <section className="release">
       <div className="release-media">
@@ -31,6 +32,8 @@ export default function ReleaseSection({ cover, coverAlt, label, title, statusLa
             </a>
           ))}
         </div>
+
+        {note && <p className="release-note">{note}</p>}
       </div>
     </section>
   )
