@@ -131,10 +131,13 @@ export default function Page() {
                 <div className="g-row" key={i}>
                   <div className={`g-track g-track--${row.direction}`}>
                     {[...row.images, ...row.images].map((src, j) => (
-                      <div
+                      <img
                         key={j}
                         className={`g-tile g-tile--${row.variant}`}
-                        style={{ backgroundImage: `url('${src}')` }}
+                        src={src}
+                        alt="Drifter Corp. gallery photo"
+                        loading="lazy"
+                        decoding="async"
                       />
                     ))}
                   </div>

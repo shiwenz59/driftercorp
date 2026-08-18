@@ -677,9 +677,10 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-5px) rotate(-
 
 .g-tile {
   flex: 0 0 auto;
+  display: block;
   background: var(--surface);
-  background-size: cover;
-  background-position: center;
+  object-fit: cover;
+  object-position: center;
   height: 220px;
 }
 
