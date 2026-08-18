@@ -5,9 +5,12 @@ import { musicPlatforms, socialPlatforms } from '@/lib/platforms'
 
 export const metadata = { title: 'Drifter Corp. — Links' }
 
-const nextReleaseBadges = [
-  { name: 'Apple Music', img: '/1_apple_badge.png',   href: 'https://music.apple.com/us/album/ebbs-n-flows/6798915673' },
-  { name: 'Spotify',     img: '/2_spotify_badge.png', href: 'https://distrokid.com/hyperfollow/driftercorp/ebbs-n-flows' },
+// TODO: replace with real links once Ebbs N' Flows is live on each platform
+const launchBadges = [
+  { name: 'Apple Music',   img: '/1_apple_badge.png',   href: '#' },
+  { name: 'Spotify',       img: '/2_spotify_badge.png', href: '#' },
+  { name: 'YouTube Music', img: '/3_youtube_badge.png', href: '#' },
+  { name: 'Tidal',         img: '/4_tidal_badge.png',   href: '#' },
 ]
 
 export default function LinksPage() {
@@ -25,12 +28,26 @@ export default function LinksPage() {
           coverAlt="Ebbs N' Flows"
           label="Album"
           title="Ebbs N' Flows"
-          statusLabel="PRE-ORDER NOW"
-          badges={nextReleaseBadges}
-          note="More pre-order options coming soon."
+          statusLabel="OUT NOW"
+          badges={launchBadges}
         />
 
-        {/* Canopy Eden release hidden for now — restore badges array above to bring back.
+        {/* Pre-order card retired now that Ebbs N' Flows is out — restore if needed.
+        <ReleaseSection
+          cover="/enf_release.png"
+          coverAlt="Ebbs N' Flows"
+          label="Album"
+          title="Ebbs N' Flows"
+          statusLabel="PRE-ORDER NOW"
+          badges={[
+            { name: 'Apple Music', img: '/1_apple_badge.png',   href: 'https://music.apple.com/us/album/ebbs-n-flows/6798915673' },
+            { name: 'Spotify',     img: '/2_spotify_badge.png', href: 'https://distrokid.com/hyperfollow/driftercorp/ebbs-n-flows' },
+          ]}
+          note="More pre-order options coming soon."
+        />
+        */}
+
+        {/* Canopy Eden release hidden for now.
         <ReleaseSection
           cover="/canopy_eden_release.png"
           coverAlt="Canopy Eden"
