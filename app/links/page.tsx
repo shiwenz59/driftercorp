@@ -6,7 +6,7 @@ import { musicPlatforms, socialPlatforms } from '@/lib/platforms'
 export const metadata = { title: 'Drifter Corp. — Links' }
 
 const nextReleaseBadges = [
-  { name: 'Apple Music', img: '/1_apple_badge.png',   href: 'https://distrokid.com/hyperfollow/driftercorp/ebbs-n-flows' },
+  { name: 'Apple Music', img: '/1_apple_badge.png',   href: 'https://music.apple.com/us/album/ebbs-n-flows/6798915673' },
   { name: 'Spotify',     img: '/2_spotify_badge.png', href: 'https://distrokid.com/hyperfollow/driftercorp/ebbs-n-flows' },
 ]
 
