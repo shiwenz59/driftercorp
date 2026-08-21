@@ -5,12 +5,11 @@ import { musicPlatforms, socialPlatforms } from '@/lib/platforms'
 
 export const metadata = { title: 'Drifter Corp. — Links' }
 
-// TODO: replace with real links once Ebbs N' Flows is live on each platform
 const launchBadges = [
-  { name: 'Apple Music',   img: '/1_apple_badge.png',   href: '#' },
-  { name: 'Spotify',       img: '/2_spotify_badge.png', href: '#' },
-  { name: 'YouTube Music', img: '/3_youtube_badge.png', href: '#' },
-  { name: 'Tidal',         img: '/4_tidal_badge.png',   href: '#' },
+  { name: 'Apple Music',   img: '/1_apple_badge.png',   href: 'https://music.apple.com/us/album/ebbs-n-flows/6798915673' },
+  { name: 'Spotify',       img: '/2_spotify_badge.png', href: 'https://open.spotify.com/album/6kk9rqSroocFeARZhqO2Nn?si=aUjY_L3iQi22FvHePhVYpw&utm_source=copy-link' },
+  { name: 'YouTube Music', img: '/3_youtube_badge.png', href: 'https://youtube.com/playlist?list=OLAK5uy_kopZTCgaVU942CuqJvidGvtmqPf7ckStA&si=MfzxfVaawyptZgSI' },
+  { name: 'Tidal',         img: '/4_tidal_badge.png',   href: 'https://tidal.com/album/549927890/u' },
 ]
 
 export default function LinksPage() {
